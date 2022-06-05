@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<div class="container">
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+        <h2>Welcome to Image Classifier</h2><br>
+        <a class="btn btn-primary btn-lg mr-5" href="{% url 'mnist' %}" type="button">MNIST</a>
+    </div>
+</div>
+{% endblock%}

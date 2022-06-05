@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+service FileTransfer
+{
+    rpc OpenChannel(stream ClientMessage) returns (stream ServerMessage);
+}
+
+message ServerMessage
+{
+    DownloadOrder downloadOrder = 1;
+    UploadOrder uploadOrder = 2;
+    DisconnectOrder disconnectOrder = 3;
+}
+
+message ClientMessage
+{
+    DownloadAcknowledgement downloadAcknowledgement = 1;
+    UploadAcknowledgement uploadAcknowledgement = 2;
+}
+
+message DownloadOrder
+{
+    string name = 1;
+    bytes data = 2;
+    int32 ifTrain = 3;
+}
+
+message DownloadAcknowledgement
+{
+    bytes data = 1;
+}
+
+message UploadOrder
+{
+    string name = 1;
+}
+
+message UploadAcknowledgement
+{
+    string name = 1;
+    bytes data = 2;
+}
+
+message DisconnectOrder
+{
+    
+}

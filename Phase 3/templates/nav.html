@@ -1,0 +1,47 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'home' %}"
+    >NavBar</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavDropdown"
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item pl-3">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item pl-3">
+        <a class="nav-link" href="{% url 'mnist' %}">MNIST</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script type="text/javascript">
+  const currentLocation = location.href;
+  const item = document.getElementsByClassName("nav-link");
+  const item2 = document.getElementsByClassName("dropdown-item");
+  const menuLength = item.length;
+  const menuLength2 = item2.length;
+
+  for (let i = 0; i < menuLength; i++) {
+    if (item[i].href === currentLocation) {
+      if (item[i].className === "nav-link dropdown-toggle")
+        item[i].className = "nav-link dropdown-toggle";
+      else item[i].className = "nav-link active";
+    }
+  }
+
+  for (let i = 0; i < menuLength2; i++) {
+    if (item2[i].href === currentLocation) item2[i].className = "dropdown-item active";
+  }
+</script>

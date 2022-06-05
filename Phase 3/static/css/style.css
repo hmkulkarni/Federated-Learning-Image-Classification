@@ -1,0 +1,16 @@
+.nav-link {
+    font-family: 'Amaranth', sans-serif;
+    font-size: 23px;
+    color: rgb(243, 240, 240) !important;
+}
+
+.nav-link.active {
+    font-family: Amaranth !important;
+    font-size: 23px;
+    background-color: #0060de;
+    border-radius: 8px;
+}
+
+.btn-mnist {
+    margin-top: 15px;
+}

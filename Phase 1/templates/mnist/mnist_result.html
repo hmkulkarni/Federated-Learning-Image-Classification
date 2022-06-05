@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<div class="container">
+    <h1>MNIST Result</h1><br><br>
+    
+    {% if img %}
+    <h2>Image uploaded by the user:</h2>
+    <img class="mx-3" src="{{img.Image.url}}" width="150px" height="150px"/>
+    {% endif %}
+    <br><br>
+    {% for i, j in probs %}
+        <p style="font-size: 17px">Probability of class <b>{{i}}</b>: {{j}}</p>
+    {% endfor %}
+        
+    <h4>Predicted Value is: {{predicted}}</h4>
+</div>
+{% endblock%}
